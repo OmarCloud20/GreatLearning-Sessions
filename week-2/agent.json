@@ -1,0 +1,10 @@
+{
+    "cloudwatch.emitMetrics":true,
+    "kinesis.endpoint":"https://kinesis.us-east-1.amazonaws.com",
+    "flows":[
+       {
+          "filePattern":"/opt/myStream/log.log",
+          "kinesisStream":"myKinesisStream"
+       }
+    ]
+ }  
