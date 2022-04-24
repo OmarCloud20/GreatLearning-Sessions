@@ -32,3 +32,9 @@ docker run -d -p 8000:8000 -p 9443:9443 --name portainer \
     portainer/portainer-ce:latest
 ```
 
+3- Access portainer UI:
+
+https://[EC2-public-IP-Address]:9443
+
+
+**Note** make sure you add a rule to the EC2 security group to open port *9443* to your local ip address. 
