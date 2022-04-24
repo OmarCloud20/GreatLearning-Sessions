@@ -8,7 +8,7 @@ service docker start
 usermod -a -G docker ec2-user
 chkconfig docker on
 ```
-
+---
 
 ### 2. Install Portainer:
 
@@ -16,7 +16,7 @@ chkconfig docker on
 
 
 
-1- Create a volume for portainer:
+1- Create a volume for Portainer:
 
 ```
 docker volume create portainer_data
@@ -32,9 +32,11 @@ docker run -d -p 8000:8000 -p 9443:9443 --name portainer \
     portainer/portainer-ce:latest
 ```
 
-3- Access portainer UI:
+3- Access Portainer User Interface:
 
-https://[EC2-public-IP-Address]:9443
+https://EC2-public-IP-Address:9443
 
 
-**Note** make sure you add a rule to the EC2 security group to open port *9443* to your local ip address. 
+**Note** make sure you add a rule to the EC2 security group to open port *9443* to your local IP address. 
+
+---
