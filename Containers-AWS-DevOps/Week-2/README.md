@@ -93,10 +93,43 @@ We have successfully containerized our static website and we can view the site o
 
 ---
 
+#### Part 3: Containerize a Static Website using Apache httpd Base Image:
+
+- Let's modify our **Dockerfile** to run Nginx base image instead of Ubuntu. From within **Website** folder, run the following command:
+
+```
+sudo nano Dockerfile
+```
+
+- Replace the previous content with the below Docker commands and save it.
+
+```
+FROM httpd:2.4
+COPY . /usr/local/apache2/htdocs/
+```
+
+
+- From within the **Website** folder, run the below command to build the image:
+
+```
+ docker build -t site_3 .
+```
+**Note:** we have defined the name of the image, **site_3**.
+
+- Now, we are ready to run the container for our static site:
+
+```
+docker run -d -p 6500:80 site_3
+```
+**Note:** we have mapped the container port 80 to the host on port 6500. We can change the host port to any other port as we like.
+
+
+We have successfully containerized our static website and we can view the site on *public-IP-address:6500*.
+
 
 #### Conclusion: 
 
-By running command `docker images`, we shall see all images on our device. Notice the difference in size between the site_1 and site_2 images. The difference in size is due to the base images we have utilized to build these Docker images. Keep this in mind when you create images in the future. 
+By running command `docker images`, we shall see all images on our device. Notice the difference in sizes between the site_1, site_2 and site_3 images. The difference in size is due to the base images we have utilized to build these Docker images. Keep this in mind when you create images in the future. 
 
 Also, notice that we have not mapped the volume to persist the data. Without creating a container volume or mapping to a local storage volume, any changes made to the data or files are not persistent and will be lost once the container is stopped.
 
