@@ -1,6 +1,8 @@
-###cContainerize a Static HTML Website using Docker
+### Containerize a Static HTML Website using Docker
 
 We had previously used this static website in week 3 of the AWS Managed Services module. Now, we will containerize the static website using several base images to compare container sizes. 
+
+---
 
 
 #### Part 1: Containerize a Static Website using Ubuntu Base Image:
@@ -40,14 +42,14 @@ CMD ["nginx","-g","daemon off;"]
 ```
  docker build -t site_1 .
 ```
-**Note** we have defined the name of the image, **Website**.
+**Note:** we have defined the name of the image, **site_1**.
 
-- Now, we are ready to run the container for our static site:
+- Now, we are ready to run the container for our static website:
 
 ```
 docker run -d -p 5000:80 site_1
 ```
-**Note** we have mapped the container port 80 to the host on port 5000. We can change the host port as we like.
+**Note:** we have mapped the container port 80 to the host on port 5000. We can change the host port as we like.
 
 
 We have successfully containerized our static website and we can view the site on *public-IP-address:5000*.
@@ -77,24 +79,26 @@ EXPOSE 80
 ```
  docker build -t site_2 .
 ```
-**Note** we have defined the name of the image, **site_2**.
+**Note:** we have defined the name of the image, **site_2**.
 
 - Now, we are ready to run the container for our static site:
 
 ```
 docker run -d -p 6000:80 site_2
 ```
-**Note** we have mapped the container port 80 to the host on port 6000. We can change the host port to any other port as we like.
+**Note:** we have mapped the container port 80 to the host on port 6000. We can change the host port to any other port as we like.
 
 
 We have successfully containerized our static website and we can view the site on *public-IP-address:6000*.
 
+---
+
 
 #### Conclusion: 
 
-By running `docker images`, we shall see all images on our device. Notice the difference in size between the site_1 and site_2 images. The difference in size is due to the base images we have utilized to build these Docker images. Keep this in mind when you create images in the future. 
+By running command `docker images`, we shall see all images on our device. Notice the difference in size between the site_1 and site_2 images. The difference in size is due to the base images we have utilized to build these Docker images. Keep this in mind when you create images in the future. 
 
-Also, notice that we have mapped the volume to persist the data. Without creating a container volume or mapping to a storage volume, any changes made to the data or files are not persistent and will be lost once the container is stopped.
+Also, notice that we have not mapped the volume to persist the data. Without creating a container volume or mapping to a local storage volume, any changes made to the data or files are not persistent and will be lost once the container is stopped.
 
 
 
