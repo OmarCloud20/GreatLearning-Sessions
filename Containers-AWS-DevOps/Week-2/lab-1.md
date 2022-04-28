@@ -126,10 +126,37 @@ docker run -d -p 6500:80 site_3
 
 We have successfully containerized our static website and we can view the site on *public-IP-address:6500*.
 
+#### Part 4: Push the Containerize a Static Website to Docker Hub:
+
+- We will tag the image prior to pushing to Docker Hub:
+
+```
+docker tag <image id> <dockerhub username>/<repository name>:latest
+```
+
+- Login to the Docker Hub from Terminal by running the below command:
+
+```
+docker login
+```
+**Note:** you will be prompted to enter your Docker Hub username and password. 
+
+
+- Now, we are ready to push the image to Docker Hub:
+
+```
+docker push <image id> <Docker Hub username>/<repository name>:latest
+```
+
+**Note:** to find the image id, run `docker images`. Make sure you Docker Hub repository is public and not private. 
+
+
+---
+
 
 #### Conclusion: 
 
-By running command `docker images`, we shall see all images on our device. Notice the difference in sizes between the site_1, site_2 and site_3 images. The difference in size is due to the base images we have utilized to build these Docker images. Keep this in mind when you create images in the future. 
+By running command `docker images`, we shall see all pulled images on our device. Notice the difference in sizes between the site_1, site_2 and site_3 images. The difference in size is due to the base images we have utilized to build these Docker images. Keep this in mind when you create images in the future. 
 
 Also, notice that we have not mapped the volume to persist the data. Without creating a container volume or mapping to a local storage volume, any changes made to the data or files are not persistent and will be lost once the container is stopped.
 
