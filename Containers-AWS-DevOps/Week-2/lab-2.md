@@ -16,5 +16,7 @@ In lab 1, we have Dockerized our static website. In this lab, we will create an 
 
 ### The Architecture Diagram
 
+<br>
+
 
 ![AD](img/ECSFargate.png)
