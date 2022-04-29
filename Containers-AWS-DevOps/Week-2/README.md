@@ -11,5 +11,5 @@
         - Part 4: Push Image to Docker Hub
 
 - [Lab 2](lab-2.md)
-    - Pull the Containerized Docker Image from Docker Hub and Deploy it to AWS ECS Fargate
+    - Pull the Docker Image from Docker Hub and Deploy it to AWS ECS using Fargate (serverless)
 ---
