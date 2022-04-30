@@ -155,7 +155,7 @@ docker tag <image id> <dockerhub username>/<repository name>:latest
 - Now, we are ready to push the image to Docker Hub:
 
 ```
-docker push <image id> <Docker Hub username>/<repository name>:latest
+docker push <Docker Hub username>/<repository name>:latest
 ```
 
 **Note:** to find the image id, run `docker images`. Make sure you Docker Hub repository is public and not private. 
