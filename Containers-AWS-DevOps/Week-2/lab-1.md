@@ -141,6 +141,16 @@ docker login
 ```
 **Note:** you will be prompted to enter your Docker Hub username and password. 
 
+- We will need to **tag** the docker image as shown below:
+
+Example:
+
+```
+docker tag <image id> <dockerhub username>/<repository name>:latest
+```
+
+**Note:** the `repository name` is the name you define for the image. 
+
 
 - Now, we are ready to push the image to Docker Hub:
 
