@@ -10,7 +10,8 @@
 
 
 **Note** follow the resources/files naming as per the tutorial. 
-
+---
+<br />
 
 ### 1. Create a Private Image Repository in AWS ECR (Elastic Container Registry):
 
@@ -105,7 +106,7 @@ git push
 
 
 
-**Note** the Pipeline will run as soon as the CodeCommit repo is updated, and if it succeeds, we shall see the built image in our ECR repo. 
+**Note** the Pipeline will run as soon as the CodeCommit repo is updated, and if it succeeds, we shall see the new image in our ECR repo. 
 
 
 We have completed creating building images and pushing them to our private ECR successfully. 
@@ -118,11 +119,12 @@ We have completed creating building images and pushing them to our private ECR s
 - We will need to use the old ECS console to create a Task Definition for our static website container. Under **Task execution IAM role**, if we don't find **ecsTaskExecutionRole**, then we need to create one as this role authorized ECS to pull private images. 
 
 From the IAM console and under Roles: 
-1- Create role.
-2- Under **Use cases for other AWS services**, select **Elastic Container Service**.
-3- Then, select, **Elastic Container Service Task**. Next. 
-3- Add permission policy **AmazonECSTaskExecutionRolePolicy** to the role. 
-4- Name the role, **ecsTaskExecutionRole**
+
+1. Create role.
+2. Under **Use cases for other AWS services**, select **Elastic Container Service**.
+3. Then, select, **Elastic Container Service Task**. Next. 
+4. Add permission policy **AmazonECSTaskExecutionRolePolicy** to the role. 
+5. Name the role, **ecsTaskExecutionRole**
 
 For information about how to configure this role, please refer to [AWS documentation](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html). You may also find [How do I allow Amazon ECS tasks to pull images from an Amazon ECR image repository](https://aws.amazon.com/premiumsupport/knowledge-center/ecs-tasks-pull-images-ecr-repository/) article beneficial. 
 
