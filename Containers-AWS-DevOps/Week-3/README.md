@@ -34,6 +34,11 @@ sudo wget https://github.com/OmarCloud20/GreatLearning-Sessions/raw/main/Contain
 unzip mysite.zip
 ```
 
+Then, we will move all files from **mysite** to local directory:
+```
+mv mysite/* .
+```
+
 
 - Once all files are moved to **mysite** folder (local repo) in Cloud9, push the files to CodeCommit using the below git commands:
 
