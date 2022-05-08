@@ -27,10 +27,13 @@
 
 ### 2. Create AWS CodeCommit repository
 
-- Name the CodeCommit repo, **mysite**. Clone the **mysite** repo to **Cloud9**. Then, download the [mysite.zip](https://github.com/OmarCloud20/GreatLearning-Sessions/tree/main/Containers-AWS-DevOps/Week-3/mysite.zip) clone the below GitHub repo as well. The GitHub repo contains all files for the static website and the pipeline. Move all files in folder Week-3 of Containers-AWS-DevOps to the CodeCommit repo, **mysite**. 
+- Name the CodeCommit repo, **mysite**. Clone the **mysite** repo to **Cloud9**. Then, download the [mysite.zip](https://github.com/OmarCloud20/GreatLearning-Sessions/tree/main/Containers-AWS-DevOps/Week-3/mysite.zip) and extract it in the CodeCommit repo, **mysite**. 
 
+```
+sudo wget https://github.com/OmarCloud20/GreatLearning-Sessions/raw/main/Containers-AWS-DevOps/Week-3/mysite.zip
+unzip mysite.zip
+```
 
-[GreatLearning-Sessions](https://github.com/OmarCloud20/GreatLearning-Sessions)
 
 - Once all files are moved to **mysite** folder (local repo) in Cloud9, push the files to CodeCommit using the below git commands:
 
