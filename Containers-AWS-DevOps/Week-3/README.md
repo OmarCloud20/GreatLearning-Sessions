@@ -109,7 +109,7 @@ git push
 **Note** the Pipeline will run as soon as the CodeCommit repo is updated, and if it succeeds, we shall see the new image in our ECR repo. 
 
 
-We have completed creating building images and pushing them to our private ECR successfully. 
+We have completed creating building images and pushing them to our private ECR repo successfully. 
 
 ---
 <br />
@@ -120,7 +120,7 @@ We have completed creating building images and pushing them to our private ECR s
 
 From the IAM console and under Roles: 
 
-1. Create role.
+1. Create a role.
 2. Under **Use cases for other AWS services**, select **Elastic Container Service**.
 3. Then, select, **Elastic Container Service Task**. Next. 
 4. Add permission policy **AmazonECSTaskExecutionRolePolicy** to the role. 
@@ -129,8 +129,11 @@ From the IAM console and under Roles:
 For information about how to configure this role, please refer to [AWS documentation](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html). You may also find [How do I allow Amazon ECS tasks to pull images from an Amazon ECR image repository](https://aws.amazon.com/premiumsupport/knowledge-center/ecs-tasks-pull-images-ecr-repository/) article beneficial. 
 
 
-**Note** once you have created **ecsTaskExecutionRole**, you can proceed and create a Task Definition using the URI from the ECR private repo. Then, deploy the Task Definition as a service to the ECS cluster. Verify that the static website is up and running prior to proceeding to the next step.
+**Note** once you have created **ecsTaskExecutionRole**, you can proceed a create a Task Definition using the URI from the ECR private repo. Then, deploy the Task Definition as a service to the ECS cluster. Verify that the static website is up and running prior to proceeding to the next step.
+
+---
+<br />
 
 ### 5. Add a Deployment Stage to the Pipeline:
 
-This is stage is to deploy the newly built image of our static website from the private ECR to Fargate. 
+This is stage is to deploy a container from the newly built image of our static website from the private ECR to Fargate. 
