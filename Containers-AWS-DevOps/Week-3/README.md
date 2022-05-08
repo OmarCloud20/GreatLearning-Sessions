@@ -137,3 +137,5 @@ For information about how to configure this role, please refer to [AWS documenta
 ### 5. Add a Deployment Stage to the Pipeline:
 
 This is stage is to deploy a container from the newly built image of our static website from the private ECR to Fargate. 
+
+**Note** for input artifacts, select **BuildArtifact**. 
