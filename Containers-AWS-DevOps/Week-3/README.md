@@ -4,7 +4,7 @@
 
 ### Prerequisites
 
-1. We have an existing ECR cluster.
+1. We have an existing ECS cluster.
 2. We have a running Task Definition using an image from ECR repo.
 3. We will spin up **Cloud9** instance to push to files to CodeCommit repo. 
 
@@ -27,7 +27,7 @@
 
 ### 2. Create AWS CodeCommit repository
 
-- Name the CodeCommit repo, **mysite**. Clone the **mysite** repo to **Cloud9**. Then, clone the below GitHub repo as well. The GitHub repo contains all files for the static website and the pipeline. Move all files in folder Week-3 of Containers-AWS-DevOps to the CodeCommit repo, **mysite**. 
+- Name the CodeCommit repo, **mysite**. Clone the **mysite** repo to **Cloud9**. Then, download the [mysite.zip](https://github.com/OmarCloud20/GreatLearning-Sessions/tree/main/Containers-AWS-DevOps/Week-3/mysite.zip) clone the below GitHub repo as well. The GitHub repo contains all files for the static website and the pipeline. Move all files in folder Week-3 of Containers-AWS-DevOps to the CodeCommit repo, **mysite**. 
 
 
 [GreatLearning-Sessions](https://github.com/OmarCloud20/GreatLearning-Sessions)
