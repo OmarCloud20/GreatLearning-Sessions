@@ -121,7 +121,6 @@ For information about how to configure this role, please refer to [AWS documenta
 
 **Note** once you have created **ecsTaskExecutionRole**, you can proceed and create a Task Definition using the URI from the ECR private repo. Then, deploy the Task Definition as a service to the ECS cluster. Verify that the static website is up and running prior to proceeding to the next step.
 
-### 5. Add a Stage to the Pipeline to Deploy a Container of New Static Website Image to Fargate 
+### 5. Add a Deployment Stage to the Pipeline:
 
-
-
+This is stage is to deploy the newly built image of our static website from the private ECR to Fargate. 
