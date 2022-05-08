@@ -53,6 +53,8 @@ git push
     - Privileged: **check** this option 
     - New service role: leave the default role name as it. A new role will be created. Capture the role's ARN because we will need to create an inline policy to allow CodeBuild to push to images to ECR. 
     - Under **Additional configuration**: click on **Add environment variabless** and then add the following:
+        
+    <br />
     
     | Name              | Value               |     Type     |
     | :----:            | :----:             |  :----: |
