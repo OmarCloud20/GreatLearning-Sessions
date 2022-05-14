@@ -55,7 +55,7 @@ Now, let's configure the AWS CLI:
 aws configure --profile Terraform
 ```
 
-**Note** add flag `profile` to the command is to give this profile a name and to refrain from using it as a default profile. The profile flag is very handy, especially if you have multiple profile configured. **BuildArtifact**. 
+**Note:** adding flag `profile` to the command is to give this profile a name and to refrain from using it as a default profile. The profile flag is very handy, especially if you have multiple profile configured. 
 
 ---
 <br />
@@ -84,7 +84,7 @@ terraform --version
 ### Basic Terraform Commands
 
 | Commands            | Usage             |     
-| :----:            | :----:             |  
+| :----            | :----:             |  
 | terraform init| Download any plugins required to run templates         |   
 | terraform plan  | Will give you a list of resources that will be created/deleted |  
 | terraform apply        | WIll create/delete resources            |   
