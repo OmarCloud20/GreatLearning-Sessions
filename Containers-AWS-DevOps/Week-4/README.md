@@ -99,6 +99,14 @@ terraform --version
 Utilize any text/code editor of your choice, create a file with a `.tf` extension and paste the below:
 
 ```
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+  }
+}
 provider "aws" {
     profile = "Terraform"
     region = "us-east-1"
@@ -127,7 +135,7 @@ terraform plan
 terraform apply
 ```
 
-Run the below Terraform command to destroy the EC2:
+Run the below Terraform command to terminate the EC2:
 
 ```
 terraform destroy
@@ -142,27 +150,35 @@ terraform destroy
 Utilize any text/code editor of your choice, create a file with a `.tf` extension and paste the below:
 
 ```
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+  }
+}
 provider "aws" {
     profile = "Terraform"
     region = "us-east-1"
     
 }
 
-resource "aws_instance" "demo_instance" {
-   
-    ami = "ami-042e8287309f5df03"
-    instance_type = "t2.micro"
-    
-    tags = {
-        Name = "Terraform_Demo"
-        
-          }
-    
+resource "aws_s3_bucket" "my-bucket" {
+  bucket = "yourname-bucket-987123921"
+  acl    = "private"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
 }
+
 ```
 
+*Note:* replace [yourname] space holder with your name. Bucket names are globally unique names and you need a unique name for the bucket.
 
-Run the below Terraform commands to provision the EC2:
+Run the below Terraform commands to provision the S3 bucket:
 
 ```
 terraform init
@@ -170,7 +186,7 @@ terraform plan
 terraform apply
 ```
 
-Run the below Terraform command to destroy the EC2:
+Run the below Terraform command to delete the S3 bucket:
 
 ```
 terraform destroy
