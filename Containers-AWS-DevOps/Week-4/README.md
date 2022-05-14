@@ -169,7 +169,7 @@ resource "aws_s3_bucket" "my-bucket" {
   acl    = "private"
 
   tags = {
-    Name        = "My bucket"
+    Name        = "My-bucket"
     Environment = "Dev"
   }
 }
