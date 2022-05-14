@@ -1,11 +1,11 @@
-# Terraform Tutorial:
+# Terraform Tutorial
  
-# Create Terraform templates to spin up an EC2 and S3 bucket
+## Create Terraform templates to spin up an EC2 and to create an S3 bucket
 
 ### Prerequisites
 
 1. Install AWS CLI v2
-2. Create an AWS IAM user to run Terraform from a local device
+2. Create an AWS IAM user 
 3. Install Terraform
 
 ---
@@ -41,12 +41,12 @@ For CLI access, we need an access key ID and secret access key. Therefore, we ne
 Once we have created an IAM user and have obtained the access keys, we will configure the AWS CLI. During the configuration process, we will enter the access key ID, secret access key, default region name and default output format. Below is an example. 
 
 
-    | Prompt                            | Example Value                           |     
-    | :-------------------------------: | :---------------------------------------: |  
-    | AWS Access Key ID [None]:         | AKIAIOSFODNN7EXAMPLE                      |   
-    | AWS Secret Access Key [None]:     | ywJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY | 
-    | Default region name [None]:       | us-east-1                                 |  
-    | Default output format [None]:     | json                                      | 
+| Prompt                            | Example Value                           |     
+| :-------------------------------: | :---------------------------------------: |  
+| AWS Access Key ID [None]:         | AKIAIOSFODNN7EXAMPLE                      |   
+| AWS Secret Access Key [None]:     | ywJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY | 
+| Default region name [None]:       | us-east-1                                 |  
+| Default output format [None]:     | json                                      | 
 
 
 Now, let's configure the AWS CLI:
@@ -82,13 +82,13 @@ terraform --version
 
 ### Basic Terraform Commands
 
-    | Commands            | Usage             |     
-    | :----:            | :----:             |  
-    | terraform init| Download any plugins required to run templates         |   
-    | terraform plan  | Will give you a list of resources that will be created/deleted |  
-    | terraform apply        | WIll create/delete resources            |   
-    | terraform destroy  | Will delete all the resources created by Terraform  |   
-    | terraform fmt | Will format the file with proper indentation |   
+| Commands            | Usage             |     
+| :----:            | :----:             |  
+| terraform init| Download any plugins required to run templates         |   
+| terraform plan  | Will give you a list of resources that will be created/deleted |  
+| terraform apply        | WIll create/delete resources            |   
+| terraform destroy  | Will delete all the resources created by Terraform  |   
+| terraform fmt | Will format the file with proper indentation |   
 
 ---
 <br />
