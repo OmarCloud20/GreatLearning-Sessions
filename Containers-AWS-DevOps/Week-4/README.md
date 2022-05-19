@@ -176,7 +176,7 @@ resource "aws_s3_bucket" "my-bucket" {
 
 ```
 
-*Note:* replace [yourname] space holder with your name. Bucket names are globally unique names and you need a unique name for the bucket.
+**Note:** replace [yourname] space holder with your name. Bucket names are globally unique names and you need a unique name for the bucket.
 
 Run the below Terraform commands to provision the S3 bucket:
 
