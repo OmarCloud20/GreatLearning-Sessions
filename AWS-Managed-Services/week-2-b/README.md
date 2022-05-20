@@ -31,7 +31,7 @@ sudo apt update && sudo apt install collectd -y && sudo apt install awscli -y
 Now, let's configure the AWS CLI and leave the access keys and secret access keys fields blank. We will need to just configure the region code to point to `us-east-1` and the output format as “json”.
 
 ```
-aws configure 
+aws configure
 ```
 ---
 
@@ -44,6 +44,8 @@ aws configure
 sudo chown ubuntu:ubuntu -R /opt
 mkdir /opt/softwares
 cd /opt/softwares
+```
+```
 wget https://s3.amazonaws.com/amazoncloudwatch-agent/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb
 sudo dpkg -i -E ./amazon-cloudwatch-agent.deb
 ```
@@ -54,7 +56,7 @@ sudo dpkg -i -E ./amazon-cloudwatch-agent.deb
 sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
 ```
 
-> Note: Enable the "common metrics" by selecting the defaults for all questions. Collect logs from directory `/var/log/syslog` and select **Advanced** for the question “Which default metrics config do you want?”.
+> Note: Enable the "common metrics" by selecting the defaults for all questions. Collect logs from directory `/var/log/syslog` and select **Advanced** for the question **Which default metrics config do you want?.** 
 
 
 Please, refer to [AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create-cloudwatch-agent-configuration-file-wizard.html) for more details about creating the CloudWatch agent configuration file. 
