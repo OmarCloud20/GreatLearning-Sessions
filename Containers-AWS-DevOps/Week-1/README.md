@@ -44,7 +44,7 @@ https://EC2-public-IP-Address:9443
 
 ---
 
-### 3. Dockerize Hello World Java Application:
+### 3. Containerize Hello World Java Application:
 
 1. Create a `Dockerfile` in the opt folder:
 
@@ -57,7 +57,7 @@ sudo nano Dockerfile
 2. Paste the below snippet into the Dockerfile and save it:
 
 ```
-------------
+# ------------
 # A custom docker image with OpenJava 11, Tomcat 9 with default ROOT and HelloWorld applications
 # The valid uri are / and /HelloWorld
 # ---------------------------------------------------------------------------------------------
@@ -89,3 +89,25 @@ CMD ["/opt/tomcat/bin/catalina.sh", "run"]
 3. click enter
 
 
+3. Build and run the container:
+
+```
+docker build -t helloworld .
+```
+
+```
+docker run -d -p 80:8080 helloworld
+```
+
+
+4. Access the HelloWorld Java application:
+
+A. Open port `80` on the EC2 security group to your local IP address.
+
+B. Plug in the public IP address of the EC2 instance followed by the `/HelloWorld`:
+
+```
+http://EC2-public-IP-Address/HelloWorld
+```
+
+> Note: the protocol used is `http`.
