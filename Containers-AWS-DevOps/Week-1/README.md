@@ -85,9 +85,7 @@ CMD ["/opt/tomcat/bin/catalina.sh", "run"]
 
 > Note: to save the file using `nano` text editor:
 a. hold down `ctrl` and click `x`
-
 b. type in `y`
-
 c. click enter
 
 
