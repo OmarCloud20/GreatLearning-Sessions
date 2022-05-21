@@ -25,7 +25,9 @@
 4. Run the following commands to install the required dependencies:
 
 ```
-sudo apt update && sudo apt install collectd -y && sudo apt install awscli -y
+sudo apt update
+sudo apt install collectd -y
+sudo apt install awscli -y
 ```
 
 Now, let's configure the AWS CLI and leave the access keys and secret access keys fields blank. We will need to just configure the region code to point to `us-east-1` and the output format as “json”.
@@ -68,7 +70,7 @@ To start the agent fot the first time, run the below command:
 ```
 sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json -s
 ```
-For more information about this command, refer to [AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/install-CloudWatch-Agent-commandline-fleet.html#:~:text=Start the CloudWatch agent using the command line).
+For more information about this command, refer to [AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/install-CloudWatch-Agent-commandline-fleet.html#:~:text=Start%20the%20CloudWatch%20agent%20using%20the%20command%20line).
 
 > Note: if we need to start, restart, stop or even check the status of the CloudWatch agent, we can use the below commands:
 
