@@ -47,7 +47,7 @@ CMD ["nginx","-g","daemon off;"]
 - Now, we are ready to run the container for our static website:
 
 ```
-docker run -d -p 5000:80 site_1
+docker run -d -p 5500:80 site_1
 ```
 **Note:** we have mapped the container port 80 to the host on port 5000. We can change the host port as we like.
 
@@ -84,7 +84,7 @@ EXPOSE 80
 - Now, we are ready to run the container for our static site:
 
 ```
-docker run -d -p 6000:80 site_2
+docker run -d -p 6500:80 site_2
 ```
 **Note:** we have mapped the container port 80 to the host on port 6000. We can change the host port to any other port as we like.
 
@@ -119,7 +119,7 @@ COPY . /usr/local/apache2/htdocs/
 - Now, we are ready to run the container for our static site:
 
 ```
-docker run -d -p 6500:80 site_3
+docker run -d -p 7500:80 site_3
 ```
 **Note:** we have mapped the container port 80 to the host on port 6500. We can change the host port to any other port as we like.
 
