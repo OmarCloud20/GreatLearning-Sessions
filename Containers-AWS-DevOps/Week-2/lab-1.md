@@ -126,12 +126,14 @@ docker run -d -p 6500:80 site_3
 
 We have successfully containerized our static website and we can view the site on *public-IP-address:6500*.
 
+---
+
 #### Part 4: Push the Containerize a Static Website to Docker Hub:
 
 - We will tag the image prior to pushing to Docker Hub:
 
 ```
-docker tag <image id> <dockerhub username>/<repository name>:latest
+docker tag <image id><tag> <dockerhub username>/<repository name>:latest
 ```
 
 - Login to the Docker Hub from Terminal by running the below command:
@@ -163,6 +165,28 @@ docker push <Docker Hub username>/<repository name>:latest
 
 ---
 
+#### Part 5: Push the Containerize a Static Website to Amazon Elastic Container Registry (ECR):
+
+- We will create a private repository in ECR with the image name. We will either enable/disable the `Tag immutability` option. 
+
+- We will tag the image prior to pushing it to ECR:
+
+```
+docker tag <image id>:<tag> <xxxxxxxxxx.dkr.ecr.us-east-1.amazonaws.com/mysite:latest>
+```
+
+>Note: from within our private repo in ECR, we should be able to obtain all Docker commands needed to push images to our private repo. 
+
+- Obtain the logging ECR command for our private repo command from with the repo. 
+
+
+**Note:** you might need to configure AWS CLI with valid credentials to authenticate with ECR in your AWS account. 
+
+
+
+- Now, we are ready to push the image to ECR. Follow the Docker push command to complete this task. 
+
+---
 
 #### Conclusion: 
 
