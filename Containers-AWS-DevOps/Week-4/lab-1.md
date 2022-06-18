@@ -11,6 +11,6 @@ The AWS CloudFormation Sample Template is to provison a WordPress Single Instanc
 <br/>
 
 ```
-sudo wget https://github.com/OmarCloud20/GreatLearning-Sessions/raw/main/AWS-Managed-Services/Week-4/template/WordPress_Single_Instance_us_east-1.template
+sudo wget https://raw.githubusercontent.com/OmarCloud20/GreatLearning-Sessions/main/Containers-AWS-DevOps/Week-4/template/WordPress_Single_Instance_us_east-1.template
 ```
 
