@@ -1,6 +1,6 @@
 # Terraform Tutorial
  
-## Create Terraform templates to spin up an EC2 and to create an S3 bucket
+### Create Terraform templates to spin up an EC2 and to create an S3 bucket
 
 ### Prerequisites
 
