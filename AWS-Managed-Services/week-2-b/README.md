@@ -12,7 +12,7 @@
 
 ---
 
-## Step 1: Setting up the environment:
+## Step 1: Spinning up an EC2:
 
 1. Spin up an EC2 instance:
 
