@@ -21,9 +21,9 @@ B. Open port 22 to your local IP address.
 
 2. Attach the pre-created IAM role “LabInstanceProfile” to the EC2 instance created above (according to the lab). 
 
-Alternatively, if you are running this lab on your personal account, you will need to create an IAM role with the CloudWatchFullAccess policy attached. Please, refer to [AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create-iam-roles-for-cloudwatch-agent-commandline.html) for more information on how create an IAM role to use with the CloudWatch agent on an EC2 instance. Once you have the role created, attach it to the EC2 instance. 
+Alternatively, if you are running this lab on your personal account, you will need to create an IAM role with the `CloudWatchAgentServerPolicy` policy attached. Please, refer to [AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create-iam-roles-for-cloudwatch-agent-commandline.html) for more information on how create an IAM role to use with the CloudWatch agent on an EC2 instance. Once you have the role created, attach it to the EC2 instance. 
 
-> Note: the needed AWS managed policy is `CloudWatchAgentServerPolicy`. Moreover, we might need to add an inline policy to allow the agent to modify the retention policy. 
+
 
 3. SSH to the EC2 instance.
 
