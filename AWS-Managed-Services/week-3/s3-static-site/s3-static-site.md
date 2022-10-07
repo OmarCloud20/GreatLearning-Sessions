@@ -5,5 +5,5 @@
 
 The folder contains:
 
-1. The static site file: *s3_site.zip*
-2. The S3 bucket policy: *bucket_policy.json*
+1. The static site file: **s3_site.zip**
+2. The S3 bucket policy: **bucket_policy.json**
