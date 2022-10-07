@@ -2,8 +2,8 @@
 
 ### Table of Contents:
 <!-- TOC -->
-- [Lab-1: S3 Static Website](s3-static-site.md)
-- [Lab-2: Extract Texts from PDFs or Images](extractors/extractors.md)
+- [Lab-1: S3 Static Website](s3-static-site/README.md)
+- [Lab-2: Extract Texts from PDFs or Images](extractors/README.md)
     - A. Extract using Apache Tika 
     - B. Extract using AWS TexTract
 ---
