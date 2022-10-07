@@ -1,9 +1,9 @@
 # Extract Texts from PDFs and Images
 
 
-A. Extract using Apache Tika as Lambda layer
+A. Extract using Apache Tika as a Lambda layer
 
-B. Extract using AWS TexTract
+B. Extract using AWS TexTract service
 
 ---
 
