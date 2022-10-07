@@ -1,7 +1,7 @@
 # Extract Texts from PDFs and Images
 
 
-A. Extract using Apache Tika Library as Lambda layer
+A. Extract using Apache Tika as Lambda layer
 
 B. Extract using AWS TexTract
 
@@ -9,7 +9,7 @@ B. Extract using AWS TexTract
 
 The folder contains:
 
-1. lambda layer - Tika library zip file: *appbase.zip*
-2. Python code to utilize the Tika library: *PDFExtractor.py*
+1. lambda layer - Apache Tika zip file: *appbase.zip*
+2. Python code to utilize the Apache Tika: *PDFExtractor.py*
 3. Lambda test event json file for the PDF Extractor: *PDFExtractorTest.json*
 4. Python code for Textract service: *TexTract.py*
