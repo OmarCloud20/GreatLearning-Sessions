@@ -7,7 +7,7 @@
 # Steps:
 # 1. Add the target bucket to lambda environment variable: Name: [TARGET_BUCKET] Value: [target_bucket_name]
 # 2. Add AmazonTextractFullAccess policy to the lambda role
-#
+# 3. Add "s3:GetObject" and "s3:PutObject" actions to the lambda role
 #******************************************************************************************
 
 import boto3
