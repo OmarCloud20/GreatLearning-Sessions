@@ -12,15 +12,20 @@
 
 ---
 
-### Step 1: Setting up the environment:
+## Step 1: Spinning up an EC2:
 
-1. Creating the EC2 instance : Create a new EC2 instance (t2.micro running Ubuntu 20.04 LTS). Make sure port 22 is open in the instance security group. 
+1. Spin up an EC2 instance:
 
-2. Attach the pre-created IAM role “LabInstanceProfile” to the EC2 instance created above. Alternatively, if you are performing this on your personal account, you will need to create an IAM role with the CloudWatchFullAccess policy attached. Please, refer to [AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create-iam-roles-for-cloudwatch-agent-commandline.html) to create an IAM role to use with the CloudWatch agent on an EC2 instance. Once you have the role created, you would need to attach to the EC2 instance. 
+A. Spin up an EC2 instance (t2.micro running Ubuntu 20.04 LTS). 
+B. Open port 22 to your local IP address. 
 
-> Note: the needed AWS managed policy is `CloudWatchAgentServerPolicy`. Moreover, we might need to add an inline policy to allow the agent to modify the retention policy. 
+2. Attach the pre-created IAM role “LabInstanceProfile” to the EC2 instance created above (according to the lab). 
 
-3. Log in to the instance using your preferred SSH client of choice.
+Alternatively, if you are running this lab on your personal account, you will need to create an IAM role with the `CloudWatchAgentServerPolicy` policy attached. Please, refer to [AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create-iam-roles-for-cloudwatch-agent-commandline.html) for more information on how create an IAM role to use with the CloudWatch agent on an EC2 instance. Once you have the role created, attach it to the EC2 instance. 
+
+
+
+3. SSH to the EC2 instance.
 
 4. Run the following commands to install the required dependencies:
 
@@ -29,15 +34,15 @@ sudo apt update
 sudo apt install collectd -y
 sudo apt install awscli -y
 ```
-
-Now, let's configure the AWS CLI and leave the access keys and secret access keys fields blank. We will need to just configure the region code to point to `us-east-1` and the output format as “json”.
+5. let's configure the AWS CLI and leave the access keys and secret access keys fields blank. We will need to just configure the region code to point to `us-east-1` and the output format as “json”.
 
 ```
 aws configure
 ```
----
 
-### Step 2: Installing Cloudwatch Agent:
+
+## Step 2: Installing Cloudwatch Agent:
+
 
 1. Install the agent using the following steps:
 
@@ -47,6 +52,7 @@ sudo chown ubuntu:ubuntu -R /opt
 mkdir /opt/softwares
 cd /opt/softwares
 ```
+
 ```
 wget https://s3.amazonaws.com/amazoncloudwatch-agent/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb
 sudo dpkg -i -E ./amazon-cloudwatch-agent.deb
@@ -58,20 +64,30 @@ sudo dpkg -i -E ./amazon-cloudwatch-agent.deb
 sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-config-wizard
 ```
 
-> Note: Enable the "common metrics" by selecting the defaults for all questions. Collect logs from directory `/var/log/syslog` and select **Advanced** for the question **Which default metrics config do you want?.** 
+
+
+- For the question **Do you want to turn StatsD daemon**, select **no**.
+- For the question **Which default metrics config do you want?**, select **Advanced**.
+- For the question **Do you want to monitor any log files?**, select **yes** and enter the following log file path: `/var/log/syslog`
+- For the question **Do you want to specify any additional log files to monitor?**, select **no**.
+- For the question **Do you want to store the config in the SSM parameter store?**, select **no**.
+
+All other questions can be answered with the default values.
 
 
 Please, refer to [AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create-cloudwatch-agent-configuration-file-wizard.html) for more details about creating the CloudWatch agent configuration file. 
 
 3. Start the CloudWatch agent:
 
-To start the agent fot the first time, run the below command:
+To start the agent for the first time, run the below command:
 
 ```
 sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json -s
 ```
 For more information about this command, refer to [AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/install-CloudWatch-Agent-commandline-fleet.html#:~:text=Start%20the%20CloudWatch%20agent%20using%20the%20command%20line).
 
+
+<br>
 > Note: if we need to start, restart, stop or even check the status of the CloudWatch agent, we can use the below commands:
 
 ```
@@ -81,35 +97,44 @@ sudo systemctl restart amazon-cloudwatch-agent.service
 sudo systemctl stop amazon-cloudwatch-agent.service
 ```
 
+
+
+
+## Step 3: Observing the Outputs:
+
+
+From the CloudWatch management console, select `Metrics` on the left hand menu. Then click on `All metrics`. Under `Custom namespaces`, click on `CWAgent` namespace to explore the metrics being monitored.
+
+
+> Note the metrics might take some time to show up. 
+
 ---
 
-
-### Step 3: Observing the Output:
-
-
-1. From the CloudWatch management console, select metrics under the custom `CWAgent` namespace. Explore the metrics being monitored.
-
-2. Also, under `EC2` Namespaces metrics, select `Per-Instance Metrics` and observe the metrics being monitored for the Instanceid and Instance name. 
-
-> Note that this might take some time to show up. 
-
----
-
-### Extra Mile: A Stress Tool to Simulate a Stress for testing:
+## An Extra Mile: A Stress Tool to Simulate a Stress Test:
 
 
-`Sysbench` is a command line app to run benchmarks on our system/instance. It is mainly intended for testing CPU, memory and file throughput as well. We can install this utility to simulate a stress on our EC2 to push CloudWatch agent to present it on our metrics.
+[Sysbench](https://github.com/akopytov/sysbench) is a command line tool to run benchmarks on our system/instance. It is mainly intended for testing CPU, memory and file throughput as well. We can install this utility to simulate a stress on our EC2.
 
-To install Sysbench in Ubuntu, run the command below:
+
+To install `Sysbench` on Ubuntu, run the command below:
 
 ```
-sudo apt install sysbench
+sudo apt install sysbench -y
 ```
-We can increase or decrease the threads to simulate the stress:
+
+We can increase or decrease the threads to simulate the magnitude of the stress:
 
 ```
 sysbench cpu --threads=5 run
 ```
+```
+sysbench memory --threads=5 run
+```
 
-Monitor the results of the stress on our EC2 instance by Sysbench.
+
+From the CloudWatch console under metrics, monitor the results of the stress test on the EC2 instance.
+
+---
+
+
 
