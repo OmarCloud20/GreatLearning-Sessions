@@ -8,3 +8,9 @@ The folder contains:
 
 1. Python code for a lambda function: **lambda.py**
 2. JavaScript code for a lambda function: **lambda.js**
+
+### Architecture Diagram:
+
+<br>
+
+![diagram](Load-Balance-Lambda-functions.png)

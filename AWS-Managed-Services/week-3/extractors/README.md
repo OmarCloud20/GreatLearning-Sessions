@@ -13,3 +13,9 @@ The folder contains:
 2. Python code to utilize the Apache Tika: **PDFExtractor.py**
 3. Lambda test event json file for the PDF Extractor: **PDFExtractorTest.json**
 4. Python code for Textract service: **TexTract.py**
+
+### Architecture Diagram - TexTract
+
+<br>
+
+![diagram](textract.png)
