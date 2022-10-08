@@ -32,7 +32,7 @@ def lambda_handler(event, context):
         </head>
         <body>
             <h1>Hello Stranger!</h1>
-            <p style="color:White;">Hello from Lambda - Python</p>
+            <p>Hello from Lambda - Python</p>
             <img src="https://acegif.com/wp-content/gifs/banana-82.gif" width="450" />
         </body>
     </html>

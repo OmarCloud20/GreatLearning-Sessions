@@ -7,4 +7,4 @@ The ALB is capable of routing traffic to specific target groups based on path. W
 The folder contains:
 
 1. Python code for a lambda function: **lambda.py**
-2. Java Script code for a lambda function: **lambda.js**
+2. JavaScript code for a lambda function: **lambda.js**
