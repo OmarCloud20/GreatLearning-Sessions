@@ -6,5 +6,6 @@
 - [Lab-2: Extract Texts from PDFs or Images](extractors/)
     - A. Extract using Apache Tika 
     - B. Extract using AWS TexTract
+- [Lab-3: Lambda Function with Application Load Balancer](lambda/)
 ---
 
