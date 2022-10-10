@@ -26,7 +26,7 @@ def lambda_handler(event, context):
                 }
                 html, p {
                 color: white;
-                ont-size: 50%;
+                font-size: 50%;
                 }
             </style>
         </head>

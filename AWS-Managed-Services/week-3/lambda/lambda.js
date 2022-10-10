@@ -20,7 +20,7 @@ exports.handler = async (event) => {
                     }
                     html, p {
                     color: black;
-                    ont-size: 50%;
+                    font-size: 50%;
                     }
                 </style>
             </head>
