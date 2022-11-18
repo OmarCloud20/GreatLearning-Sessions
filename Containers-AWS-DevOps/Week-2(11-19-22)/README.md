@@ -3,7 +3,18 @@
 
 ### Part 1: Containerize Hello World Java Application
 
-#### 1. Install Docker on AWS EC2 (Amazon Linux 2):
+#### 1. Create IAM Instance Profile for EC2 Container Registry (ECR):
+
+1. Navigate to IAM console and click on Roles.
+2. Click on Create Role.
+3. Select EC2 as the service and click on Next: Permissions.
+4. Search for AmazonEC2ContainerRegistryFullAccess and select it.
+5. Click on Next: Tags.
+6. Click on Next: Review.
+7. Enter a name for the role and click on Create Role.
+
+
+#### 2. Install Docker on AWS EC2 (Amazon Linux 2):
 
 Add the below snippet to the `user data` during the creating of the EC2 instance.
 
@@ -16,9 +27,11 @@ usermod -a -G docker ec2-user
 chkconfig docker on
 ```
 
+>Note: attached IAM role to the EC2 instance.
+
 ---
 
-#### 2. Containerize Hello World Java Application:
+#### 3. Containerize Hello World Java Application:
 
 1. Create a `Dockerfile` in the opt folder:
 
