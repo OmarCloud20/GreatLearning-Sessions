@@ -157,6 +157,8 @@ git push
 
 **Important:** capture the name of the service role created for the CodeBuild project. We need it in one of the next steps.
 
+![CodeBuild project](imgs/1.png)
+
 8. Under "Environment" section, click on "Additional configuration". Under "Environment variables", click on "Add environment variable" button and enter the following:
 
     | Name              | Value                         |     Type     |
