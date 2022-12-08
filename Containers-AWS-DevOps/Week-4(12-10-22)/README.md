@@ -4,7 +4,7 @@
 ## Table of Contents
 <!-- TOC -->
 - [Lab 1](lab-1.md)
-    - CloudFormation
+    - Ci/CD with AWS CodePipeline
 - [Lab 2](lab-2.md)
     - Terraform
 - [Lab 3](lab-3.md)
