@@ -20,6 +20,15 @@ sudo mkdir Website && cd Website
 sudo wget https://github.com/OmarCloud20/GreatLearning-Sessions/raw/main/AWS-Managed-Services/week-3/s3/s3_site.zip
 sudo unzip s3_site.zip
 ```
+
+Or, you can use `curl` instead of `wget`:
+
+```
+sudo curl -o s3_site_zip https://github.com/OmarCloud20/GreatLearning-Sessions/raw/main/AWS-Managed-Services/week-3/s3/s3_site.zip
+sudo unzip s3_site.zip
+```
+
+
 - Now, we will create a **Dockerfile**:
 
 ```
