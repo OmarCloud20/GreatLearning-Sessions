@@ -31,7 +31,7 @@
 - Name the CodeCommit repo, **mysite**. Clone the **mysite** repo to **Cloud9**. Then, download the [mysite.zip](https://github.com/OmarCloud20/GreatLearning-Sessions/tree/main/Containers-AWS-DevOps/Week-3/mysite.zip) and extract it in the CodeCommit repo, **mysite**. 
 
 ```
-sudo wget https://github.com/OmarCloud20/GreatLearning-Sessions/raw/main/Containers-AWS-DevOps/Week-3/mysite.zip
+sudo wget https://raw.githubusercontent.com/OmarCloud20/GreatLearning-Sessions/main/Containers-AWS-DevOps/Week-3/mysite.zip
 unzip mysite.zip
 ```
 

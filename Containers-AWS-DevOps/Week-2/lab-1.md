@@ -17,14 +17,14 @@ sudo mkdir Website && cd Website
 - Run the following command to download and unzip the website zip file in **Website** folder:
 
 ```
-sudo wget https://github.com/OmarCloud20/GreatLearning-Sessions/raw/main/AWS-Managed-Services/week-3/s3/s3_site.zip
+sudo wget https://raw.githubusercontent.com/OmarCloud20/GreatLearning-Sessions/main/AWS-Managed-Services/week-3/s3-static-site/s3_site.zip
 sudo unzip s3_site.zip
 ```
 
 Or, you can use `curl` instead of `wget`:
 
 ```
-sudo curl -o s3_site.zip https://github.com/OmarCloud20/GreatLearning-Sessions/raw/main/AWS-Managed-Services/week-3/s3/s3_site.zip
+sudo curl -o s3_site.zip https://raw.githubusercontent.com/OmarCloud20/GreatLearning-Sessions/main/AWS-Managed-Services/week-3/s3-static-site/s3_site.zip
 sudo unzip s3_site.zip
 ```
 
