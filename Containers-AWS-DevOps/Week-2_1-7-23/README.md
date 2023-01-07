@@ -1,4 +1,4 @@
-# Containerize Hello World Java Application and Push the Image to Docker Hub and AWS ECR
+# Containerize Hello World Java Application and Push the Image to Docker Hub and to AWS ECR
 
 
 ### Part 1: Containerize Hello World Java Application
