@@ -1,4 +1,4 @@
-# How to Build a CI/CD Pipeline with AWS CodeCommit, CodeBuild, CodeDeploy and CodePipeline to deploy a Containerized Static Website to AWS ECS - Fargate
+# How to Build a CI/CD Pipeline with AWS CodeCommit, CodeBuild, and CodePipeline to deploy a Containerized Static Website to AWS ECS - Fargate
 
 
 ## What is AWS CodeCommit
