@@ -39,7 +39,7 @@ The following diagram shows the architecture of the CI/CD pipeline that we will 
 1. Existing AWS ECS Cluster
 2. Existing ECS Task Definition
 
-**Important:** you may refer to the following tutorial to create an ECS cluster and a task definition. [Tutorial](lab-1-1.md)
+**Important:** you may refer to the following tutorial to create an ECS cluster and a task definition. [Tutorial](lab-2-2.md)
 
 ## Step 1: Initial configuration of AWS CodeCommit (Linux, macOS or Unix)
 

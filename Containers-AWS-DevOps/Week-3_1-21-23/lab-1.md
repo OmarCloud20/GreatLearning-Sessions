@@ -1,4 +1,4 @@
-# How Build a CI/CD Pipeline with AWS CodeCommit, CodeBuild and CodePipeline to deploy images to AWS ECR 
+# How to Build a CI/CD Pipeline with AWS CodeCommit, CodeBuild and CodePipeline to deploy images to AWS ECR 
 
 
 ## What is AWS CodeCommit
