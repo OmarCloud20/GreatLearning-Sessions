@@ -7,6 +7,8 @@
     - CloudFormation
 - [Lab 2](lab-2.md)
     - Terraform
+- [Lab 2 Updated](lab-2-2.md)
+    - Terraform Basics
 
 <br/>
 
